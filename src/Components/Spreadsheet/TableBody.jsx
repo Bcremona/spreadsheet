@@ -74,12 +74,14 @@ export default function TableBody({ columnNames, rowNumbers, isSubtractPressed, 
         // Writes result onto selectedCell
         let cellToModify = document.getElementById(selectedCell);
 
-        cellToModify.value = result;
+        !isNaN(result) ? cellToModify.value = result : alert('Invalid operation, please select numbers');
 
     }
 
     // Handles enter key press in case of manual operations in cell
     const handleEnter = (e) => {
+
+        e.preventDefault();
         
         let cellValue = e.target.value; 
         cellValue = cellValue.replace(/\s/g, '') // Removes spaces from string

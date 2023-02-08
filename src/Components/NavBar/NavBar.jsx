@@ -19,7 +19,8 @@ export default function NavBar({isSubtractPressed, setIsSubtractPressed, isAddPr
     useEffect(() => {}, [isAddPressed, isSubtractPressed])
 
     const addButtonStyle = {
-        backgroundColor: isAddPressed? '#094' : '#0d6efd'
+        backgroundColor: isAddPressed? '#094' : '#0d6efd',
+        marginRight: '1em'
     }
 
     const subtractButtonStyle = {
@@ -33,7 +34,7 @@ export default function NavBar({isSubtractPressed, setIsSubtractPressed, isAddPr
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Button style={{addButtonStyle, marginRight: '1em'}} onClick={selectAdd}> Add </Button>
+            <Button style={addButtonStyle} onClick={selectAdd}> Add </Button>
             <Button onClick={selectSubtract} style={subtractButtonStyle} > Subtract </Button>
           </Nav>
         </Navbar.Collapse>
